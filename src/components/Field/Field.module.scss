@@ -1,0 +1,30 @@
+.field {
+    margin: 20px;
+    user-select:none;
+}
+.end .cell {
+    pointer-events: none;
+    background-color: rgb(240, 69, 69);
+}
+.win .cell {
+    pointer-events: none;
+    background-color: rgb(5, 230, 91);
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.cell, .cell[checked="yes"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(7, 255, 214);
+    outline: 1px solid black;
+    
+    cursor: pointer;
+}
+.cell[checked="yes"] {background-color: rgb(255, 255, 255)}
+
