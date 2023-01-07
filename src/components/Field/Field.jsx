@@ -51,9 +51,6 @@ const Field = (
                 if( checked[i].hasAttribute("checked")) {
                     checked[i].removeAttribute("checked"); 
                 }
-                if( checked[i].hasAttribute("bombed")) {
-                    checked[i].textContent="*"; 
-                }
             }
 
         }
@@ -129,6 +126,10 @@ const Field = (
                     }
                     if(fieldAns[ Math.floor(checked[i].id/(m+2))][checked[i].id%(m+2)-1]===0) {
                         checked[i].textContent=" "
+
+                    } else if(fieldAns[ Math.floor(checked[i].id/(m+2))][checked[i].id%(m+2)-1]==="*") {
+                        checked[i].classList.add("bomb")
+                        
                     } else {
                      checked[i].textContent=fieldAns[ Math.floor(checked[i].id/(m+2))][checked[i].id%(m+2)-1]
                     }

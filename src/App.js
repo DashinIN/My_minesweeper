@@ -24,7 +24,7 @@ function App() {
       <div className="inputs">
     <Input  count={n} increment={1} setCount={setN} text={"heigth"}></Input>
     <Input  count={m} increment={1} setCount={setM} text={"width"}></Input>
-    <Input  count={k} increment={10} setCount={setK} text={"mines"}></Input>
+    <Input  count={k} increment={10} setCount={setK} text={"bombs"}></Input>
       </div>
     :<></> 
     }
