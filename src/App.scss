@@ -13,7 +13,7 @@ body {
 .wrapper {
  display: flex;
  flex-direction: column;
- 
+ margin-top: 40px;
  align-items: center;
 }
 .bomb {
@@ -27,8 +27,19 @@ body {
 
 .inputs {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
+
+@media (min-width: 500px) {
+  .inputs {
+    
+    flex-direction: row;
+    
+  }
+}
+  
+
 
 .btn {
    
@@ -82,4 +93,24 @@ body {
 .btn:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+
+
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
 }

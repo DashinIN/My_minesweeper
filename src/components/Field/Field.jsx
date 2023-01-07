@@ -5,6 +5,7 @@ import s from "./Field.module.scss"
 const Field = (
     {n,
     m,
+    k,
     lose, 
     setLose,
     win,
@@ -42,7 +43,7 @@ const Field = (
                 }
             }
         }
-        if(bombCount + checkCount === n*m) {
+        if(bombCount + checkCount === n*m && bombCount===k) {
             setWin(true)
             console.log("you win")
             a.current.classList.add(s.win)
@@ -125,13 +126,15 @@ const Field = (
                         checked[i].removeAttribute("checked"); 
                     }
                     if(fieldAns[ Math.floor(checked[i].id/(m+2))][checked[i].id%(m+2)-1]===0) {
-                        checked[i].textContent=" "
+                        checked[i].textContent=" ";
+                        checked[i].classList.remove("bomb");
 
                     } else if(fieldAns[ Math.floor(checked[i].id/(m+2))][checked[i].id%(m+2)-1]==="*") {
                         checked[i].classList.add("bomb")
                         
                     } else {
                      checked[i].textContent=fieldAns[ Math.floor(checked[i].id/(m+2))][checked[i].id%(m+2)-1]
+                     checked[i].classList.remove("bomb")
                     }
                 }
         }

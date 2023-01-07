@@ -3,6 +3,8 @@ import Field from "./components/Field/Field"
 import makeField from "./Functions/MakeField";
 import "./App.scss"
 import Input from "./components/Input/Input";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 
 function App() {
@@ -21,25 +23,32 @@ function App() {
   return (
     <div className="wrapper"  >
     { !game ? 
+    
       <div className="inputs">
     <Input  count={n} increment={1} setCount={setN} text={"heigth"}></Input>
     <Input  count={m} increment={1} setCount={setM} text={"width"}></Input>
     <Input  count={k} increment={10} setCount={setK} text={"bombs"}></Input>
       </div>
+      
+      
     :<></> 
     }
         <>
         {game ?
-        <>
+        <> 
+        
+    
           <Field 
             n={n}
             m={m}
+            k={k}
             lose ={lose}
             setLose= {setLose}
             win={win}
             setWin={setWin}
             field={field}
             fieldAns={fieldAns}/> 
+            
             <button className="btn" onClick={() => setGame(false)}>again</button>
             </>
             :
